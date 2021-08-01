@@ -3,10 +3,11 @@ package com.spotify.flextemplate
 import com.spotify.scio._
 
 /*
-sbt "runMain [PACKAGE].WordCount
-  --project=[PROJECT] --runner=DataflowRunner --region=[REGION]
-  --input=gs://dataflow-samples/shakespeare/kinglear.txt
-  --output=gs://[BUCKET]/[PATH]/wordcount"
+sbt "runMain ${PACKAGE}.WordCount \
+  --project=${PROJECT} --runner=DataflowRunner --region=${REGION} \
+  --input=gs://dataflow-samples/shakespeare/kinglear.txt \
+  --output=gs://${BUCKET}/${FOLDER}/wordcount \
+  --gcpTempLocation=gs://${BUCKET}/temp"
  */
 
 object WordCount {

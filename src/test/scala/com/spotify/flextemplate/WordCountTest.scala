@@ -9,7 +9,7 @@ class WordCountTest extends PipelineSpec {
   val expected = Seq("a: 3", "b: 3", "c: 1", "d: 1", "e: 1")
 
   "WordCount" should "work" in {
-    JobTest[com.spotify.WordCount.type]
+    JobTest[com.spotify.flextemplate.WordCount.type]
       .args("--input=in.txt", "--output=out.txt")
       .input(TextIO("in.txt"), inData)
       .output(TextIO("out.txt"))(_ should containInAnyOrder(expected))
