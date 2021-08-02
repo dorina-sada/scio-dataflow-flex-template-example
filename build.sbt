@@ -98,6 +98,8 @@ lazy val root: Project = project
     publish / skip := true,
     run / classLoaderLayeringStrategy := ClassLoaderLayeringStrategy.Flat,
     libraryDependencies ++= Seq(
+      "com.spotify" %% "scio-bigquery" % scioVersion,
+      "com.spotify" %% "scio-extra" % scioVersion,
       "com.spotify" %% "scio-core" % scioVersion,
       "com.spotify" %% "scio-test" % scioVersion % Test,
       "org.apache.beam" % "beam-runners-direct-java" % beamVersion,
